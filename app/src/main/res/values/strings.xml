@@ -196,6 +196,7 @@
     <!-- Toast Messages -->
     <string name="login_success">Berhasil login: %1$s</string>
     <string name="login_fail">Login gagal: %1$s (Code: %2$d)</string>
+    <string name="login_cancelled">Login dibatalkan</string>
 
     <!-- Accessibility -->
     <string name="profile_photo_desc">Foto profil pengguna</string>

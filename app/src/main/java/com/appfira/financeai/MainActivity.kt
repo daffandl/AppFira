@@ -1,16 +1,21 @@
 package com.appfira.financeai
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.WindowCompat
+import androidx.compose.foundation.layout.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
+import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
-import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -26,18 +31,53 @@ class MainActivity : ComponentActivity() {
     private val googleSignInLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
+        if (result.resultCode == Activity.RESULT_CANCELED) {
+            Toast.makeText(this, getString(R.string.login_fail, getString(R.string.login_cancelled), -1), Toast.LENGTH_SHORT).show()
+            return@registerForActivityResult
+        }
+
         val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
         try {
-            val account = task.getResult(com.google.android.gms.common.api.ApiException::class.java)
+            val account = task.getResult(ApiException::class.java)
             if (account != null) {
                 viewModel.setGoogleAccount(account.email, account.displayName, account.photoUrl?.toString())
-                android.widget.Toast.makeText(this, getString(R.string.login_success, account.email), android.widget.Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_success, account.email), Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
             if (BuildConfig.DEBUG) Log.e("MainActivity", "Google Sign-In failed", e)
-            val statusCode = (e as? com.google.android.gms.common.api.ApiException)?.statusCode ?: -1
-            android.widget.Toast.makeText(this, getString(R.string.login_fail, e.message, statusCode), android.widget.Toast.LENGTH_LONG).show()
+            val statusCode = (e as? ApiException)?.statusCode ?: -1
+            Toast.makeText(this, getString(R.string.login_fail, e.message, statusCode), Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun buildGoogleSignInOptions(): GoogleSignInOptions {
+        return GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+    }
+
+    private fun ensureGooglePlayServicesAvailable(): Boolean {
+        val availability = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this)
+        if (availability == ConnectionResult.SUCCESS) {
+            return true
+        }
+
+        val errorDialog = GoogleApiAvailability.getInstance().getErrorDialog(this, availability, 9000)
+        if (errorDialog != null) {
+            errorDialog.show()
+        } else {
+            Toast.makeText(this, "Google Play Services tidak tersedia untuk login.", Toast.LENGTH_LONG).show()
+        }
+        return false
+    }
+
+    private fun launchGoogleLogin() {
+        if (!ensureGooglePlayServicesAvailable()) {
+            return
+        }
+
+        googleSignInClient = GoogleSignIn.getClient(this, buildGoogleSignInOptions())
+        googleSignInLauncher.launch(googleSignInClient.signInIntent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,11 +86,7 @@ class MainActivity : ComponentActivity() {
         
         WindowCompat.setDecorFitsSystemWindows(window, false)
         
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail()
-            .requestScopes(Scope("https://www.googleapis.com/auth/spreadsheets"), Scope("https://www.googleapis.com/auth/drive.file"))
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient = GoogleSignIn.getClient(this, buildGoogleSignInOptions())
 
         val lastAccount = GoogleSignIn.getLastSignedInAccount(this)
         if (lastAccount != null) {
@@ -83,7 +119,7 @@ class MainActivity : ComponentActivity() {
                             val userEmail by viewModel.userEmail.collectAsState()
                             
                             if (userEmail == null) {
-                                AuthScreen(onLoginClick = { googleSignInLauncher.launch(googleSignInClient.signInIntent) })
+                                AuthScreen(onLoginClick = { launchGoogleLogin() })
                             } else {
                                 MainScreen(viewModel, settings) {
                                     googleSignInClient.signOut().addOnCompleteListener {
