@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night/dark mode override: background hitam agar tidak flash putih -->
+    <style name="Theme.FinanceAI" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorPrimary">@color/blue_light</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="Theme.FinanceAI.Splash" parent="Theme.FinanceAI">
+        <item name="android:windowBackground">@color/background_dark</item>
+    </style>
+</resources>

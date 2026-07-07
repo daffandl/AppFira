@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme utama: background diset ke warna app agar tidak flash putih saat launch -->
+    <style name="Theme.FinanceAI" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorPrimary">@color/blue_primary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <!-- Hindari flash putih saat app dibuka -->
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <!-- Splash/launch theme: tampil sesaat sebelum MainActivity render -->
+    <style name="Theme.FinanceAI.Splash" parent="Theme.FinanceAI">
+        <item name="android:windowBackground">@color/background_light</item>
+    </style>
+</resources>

@@ -1,0 +1,214 @@
+<resources>
+    <string name="app_name">Finance AI</string>
+    
+    <!-- Navigation -->
+    <string name="nav_chat">Chat</string>
+    <string name="nav_history">Riwayat</string>
+    <string name="nav_sheets">Sheets</string>
+    <string name="nav_settings">Pengaturan</string>
+
+    <!-- Dashboard -->
+    <string name="total_balance">Total Saldo</string>
+    <string name="income">Pemasukan</string>
+    <string name="expense">Pengeluaran</string>
+    <string name="recent_transactions">Transaksi Terakhir</string>
+    
+    <!-- Chat -->
+    <string name="chat_placeholder">Kirim pesan (contoh: Makan siang 50rb)</string>
+    <string name="chat_hint_income">Pemasukan</string>
+    <string name="chat_hint_expense">Pengeluaran</string>
+    <string name="chat_ai_typing">AI sedang mengetik…</string>
+
+    <!-- History -->
+    <string name="history_title">Riwayat</string>
+    <string name="export_label">Export</string>
+    <string name="no_transactions">Belum ada transaksi</string>
+    <string name="category_all">Semua</string>
+    <string name="transaction_detail">Rincian Transaksi</string>
+    <string name="desc_label">Deskripsi</string>
+    <string name="category_label">Kategori</string>
+    <string name="amount_label">Nominal</string>
+    <string name="date_label">Tanggal</string>
+    <string name="time_label">Waktu</string>
+    <string name="close_btn">Tutup</string>
+    <string name="btn_back">Kembali</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_save">Simpan</string>
+    <string name="btn_delete">Hapus</string>
+    <string name="delete_transaction_title">Hapus Transaksi</string>
+    <string name="delete_transaction_text">Apakah Anda yakin ingin menghapus transaksi ini? Data yang sudah dihapus tidak dapat dikembalikan.</string>
+    <string name="delete_all_transactions_title">Hapus Semua Transaksi</string>
+    <string name="delete_all_transactions_text">Apakah Anda yakin ingin menghapus semua transaksi? Data lokal akan terhapus dan data di spreadsheet akan dikosongkan (header tetap). Tindakan ini tidak dapat dibatalkan.</string>
+    <string name="delete_all_transactions_btn">Hapus Semua</string>
+
+    <!-- Spreadsheet -->
+    <string name="active_spreadsheet">Spreadsheet Aktif</string>
+    <string name="no_active_spreadsheet">Pilih spreadsheet untuk mengaktifkan</string>
+    <string name="create_new_spreadsheet">Buat Spreadsheet Baru</string>
+    <string name="spreadsheet_name">Nama Spreadsheet</string>
+    <string name="spreadsheet_placeholder">Misal: Keuangan Mei 2026</string>
+    <string name="btn_create">Buat</string>
+    <string name="btn_cancel">Batal</string>
+    <string name="no_spreadsheets">Belum ada spreadsheet</string>
+    <string name="qr_code_title">QR Code Spreadsheet</string>
+    <string name="qr_code_hint">Scan untuk membuka di perangkat lain</string>
+    <string name="copy_id">Salin ID</string>
+    <string name="share_label">Bagikan</string>
+    <string name="delete_label">Hapus</string>
+    <string name="delete_confirm_title">Hapus Spreadsheet</string>
+    <string name="delete_confirm_text">Apakah Anda yakin ingin menghapus spreadsheet \'%1$s\'? Tindakan ini juga akan menghapus file dari Google Drive Anda.</string>
+    <string name="delete_yes">Ya, Hapus</string>
+    <string name="delete_no">Batal</string>
+    <string name="share_message">Lihat laporan keuangan saya di Google Sheets: %1$s</string>
+    <string name="spreadsheet_label_name">Nama</string>
+    <string name="spreadsheet_label_created">Tanggal dibuat</string>
+    <string name="spreadsheet_id_preview">ID: %1$s…</string>
+    <string name="open_label">Buka</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="connected">Terhubung</string>
+    <string name="disconnected">Terputus</string>
+    <string name="logout_btn">Keluar dari Akun</string>
+    <string name="logout_confirm_title">Konfirmasi Keluar</string>
+    <string name="logout_confirm_text">Apakah Anda yakin ingin keluar dari akun?</string>
+    <string name="logout_yes">Ya, Keluar</string>
+    <string name="logout_no">Batal</string>
+    
+    <string name="sync_section">Sinkronisasi</string>
+    <string name="sync_auto_title">Auto-Sync Google Sheets</string>
+    <string name="sync_auto_desc">Sync otomatis ke spreadsheet aktif</string>
+    <string name="sync_drive_title">Sync ke Drive Pribadi</string>
+    <string name="sync_drive_desc">Backup ke folder \'Finance AI Tracker\'</string>
+    <string name="sync_public_title">Sync ke Link Publik</string>
+    <string name="sync_public_desc">Izinkan akses via link spreadsheet</string>
+    
+    <string name="app_section">Pengaturan Aplikasi</string>
+    <string name="lang_title">Bahasa</string>
+    <string name="icon_title">Ikon Aplikasi</string>
+    <string name="theme_title">Tema</string>
+    <string name="lang_select_title">Pilih Bahasa</string>
+    <string name="theme_select_title">Pilih Tema</string>
+    <string name="theme_system">Sesuai Sistem</string>
+    <string name="theme_light">Terang</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="icon_select_title">Ganti Ikon App</string>
+    <string name="icon_restart_title">Mulai ulang aplikasi?</string>
+    <string name="icon_restart_desc">Kamu bisa lihat perubahannya setelah menutup aplikasi.</string>
+    <string name="icon_later">Nanti saja</string>
+    <string name="icon_restart_now">Mulai ulang</string>
+    <string name="icon_mock_messages">Pesan</string>
+    <string name="icon_mock_maps">Peta</string>
+    <string name="icon_classic_desc">Ikon default dengan warna biru khas.</string>
+    <string name="icon_dark_desc">Tampilan gelap yang elegan dan minimalis.</string>
+    <string name="icon_themed_desc">Ikon yang mengikuti warna tema sistem (Android 13+).</string>
+    <string name="icon_badge_new">Baru</string>
+    <string name="icon_name_default">Default</string>
+    <string name="icon_name_dark">Dark</string>
+    <string name="icon_name_themed">Themed</string>
+    <string name="icon_title_classic">Classic</string>
+    <string name="icon_title_dark">Dark</string>
+    <string name="icon_title_themed">Themed</string>
+    <string name="lang_name_indo">Bahasa Indonesia</string>
+    <string name="lang_name_en">English</string>
+    <string name="lang_name_system">Sesuai Sistem</string>
+
+    <string name="help_desc">Aplikasi ini membantu Anda mencatat keuangan dengan bantuan AI dan sinkronisasi Google Sheets secara otomatis.</string>
+    <string name="help_usage_title">Cara Penggunaan:</string>
+    <string name="help_usage_steps">1. Hubungkan akun Google Anda di menu sinkronisasi.\n2. Gunakan fitur chat untuk mencatat transaksi secara natural.\n3. Pantau pengeluaran Anda di dashboard dan riwayat.</string>
+    <string name="help_more_title">Butuh Bantuan Lebih Lanjut?</string>
+    <string name="help_short_desc">Cara penggunaan, panduan sinkronisasi, dan privasi.</string>
+    <string name="help_guide_short_desc">Panduan fitur dan langkah sinkronisasi Google Sheets.</string>
+    <string name="help_privacy_short_desc">Data Anda tersimpan lokal dan di Google Drive pribadi Anda.</string>
+    <string name="help_support_response_time">Kami akan membalas pesan Anda dalam waktu 1–2 hari kerja.</string>
+    <string name="support_email_label">Email: support@appfira.com</string>
+    
+    <string name="help_welcome">Selamat datang di Finance AI!</string>
+    <string name="help_features_title">Fitur Utama</string>
+    <string name="help_feature_ai">• Chat AI: Catat transaksi hanya dengan mengetik pesan natural.</string>
+    <string name="help_feature_dashboard">• Dashboard: Visualisasi saldo dan tren keuangan secara real-time.</string>
+    <string name="help_feature_sync">• Sinkronisasi: Integrasi penuh dengan Google Sheets.</string>
+    <string name="help_feature_export">• Export: Simpan riwayat transaksi ke format Excel.</string>
+    <string name="help_sync_guide_title">Panduan Sinkronisasi</string>
+    <string name="help_sync_step_1">1. Login: Pastikan Anda sudah masuk dengan akun Google.</string>
+    <string name="help_sync_step_2">2. Pilih Spreadsheet: Di menu \'Sheets\', pilih spreadsheet aktif atau buat baru.</string>
+    <string name="help_sync_step_3">3. Aktifkan Sync: Nyalakan \'Sync ke Drive Pribadi\' untuk mulai mencadangkan data.</string>
+    <string name="help_sync_step_4">4. Auto-Sync: Jika aktif, setiap transaksi dari chat akan langsung terkirim ke Sheets.</string>
+    <string name="help_privacy_title">Keamanan &amp; Privasi</string>
+    <string name="help_privacy_desc">Data keuangan Anda sepenuhnya milik Anda. Finance AI menyimpan data di penyimpanan lokal perangkat Anda dan di Google Drive pribadi Anda. Kami tidak memiliki server perantara untuk menyimpan data transaksi Anda.</string>
+    
+    <string name="other_section">Lainnya</string>
+    <string name="help_title">Bantuan</string>
+    
+    <!-- Auth -->
+    <string name="login_welcome">Selamat Datang</string>
+    <string name="login_desc">Kelola keuangan Anda lebih cerdas dengan bantuan AI.</string>
+    <string name="login_with_google">Masuk dengan Google</string>
+    <string name="login_logo_desc">Ilustrasi Finance AI</string>
+    <string name="google_logo_desc">Logo Google</string>
+
+    <!-- Export -->
+    <string name="export_header_date">Tanggal</string>
+    <string name="export_header_desc">Deskripsi</string>
+    <string name="export_header_category">Kategori</string>
+    <string name="export_header_type">Tipe</string>
+    <string name="export_header_amount">Nominal</string>
+    <string name="export_summary">RINGKASAN</string>
+    <string name="export_total_income">Total Pemasukan</string>
+    <string name="export_total_expense">Total Pengeluaran</string>
+    <string name="export_final_balance">Saldo Akhir</string>
+    <string name="export_chooser_title">Simpan Laporan Keuangan</string>
+
+    <!-- Categories & Types -->
+    <string name="category_other">Lainnya</string>
+    <string name="category_salary">Gaji</string>
+    <string name="category_bonus">Bonus</string>
+    <string name="category_food">Makanan</string>
+    <string name="category_bill">Tagihan</string>
+    <string name="category_transport">Transportasi</string>
+    <string name="category_shopping">Belanja</string>
+    <string name="category_health">Kesehatan</string>
+    <string name="category_education">Pendidikan</string>
+    <string name="category_investment">Investasi</string>
+    <string name="category_entertainment">Hiburan</string>
+    <string name="category_home">Rumah</string>
+    <string name="category_travel">Perjalanan</string>
+    <string name="category_clothing">Pakaian</string>
+    <string name="type_income_label">Pemasukan</string>
+    <string name="type_expense_label">Pengeluaran</string>
+    <string name="edit_transaction">Edit Transaksi</string>
+    <string name="last_updated_label">Terakhir Diubah</string>
+
+    <!-- Chat Messages -->
+    <string name="currency_symbol">Rp</string>
+    <string name="currency_format">%1$s %2$s</string>
+    <string name="chat_parse_success">Catatan %1$s berhasil: %2$s sebesar %3$s ke kategori %4$s.</string>
+    <string name="chat_parse_fail">Maaf, saya tidak mengerti. Coba gunakan format seperti \'beli kopi 20rb\'</string>
+    <string name="chat_login_required">Silakan login Google terlebih dahulu.</string>
+    <string name="chat_creating_spreadsheet">Sedang membuat spreadsheet \'%1$s\'…</string>
+    <string name="chat_spreadsheet_success">Spreadsheet \'%1$s\' berhasil dibuat!</string>
+    <string name="chat_spreadsheet_fail">Gagal membuat spreadsheet.</string>
+    <string name="chat_sync_auto_fail">Auto-Sync hanya dapat diaktifkan jika Sync ke Drive Pribadi atau Publik aktif.</string>
+    <string name="chat_sync_enabled_new">Auto-Sync diaktifkan. %1$d transaksi baru telah disinkronkan.</string>
+    <string name="chat_sync_enabled_none">Auto-Sync diaktifkan. Tidak ada transaksi baru untuk disinkronkan.</string>
+    <string name="chat_sync_failed">Gagal menyinkronkan transaksi ke Google Sheets.</string>
+    
+    <!-- Toast Messages -->
+    <string name="login_success">Berhasil login: %1$s</string>
+    <string name="login_fail">Login gagal: %1$s (Code: %2$d)</string>
+
+    <!-- Accessibility -->
+    <string name="profile_photo_desc">Foto profil pengguna</string>
+    <string name="user_fallback">Pengguna</string>
+
+    <!-- Mock Icon Screen Labels -->
+    <string name="icon_mock_camera">Kamera</string>
+    <string name="icon_mock_photos">Foto</string>
+    <string name="icon_mock_notes">Catatan</string>
+    <string name="icon_mock_music">Musik</string>
+    <string name="icon_mock_settings">Pengaturan</string>
+    <string name="icon_mock_clock">Jam</string>
+    <string name="icon_mock_phone">Telepon</string>
+    <string name="icon_mock_mail">Email</string>
+    <string name="icon_mock_browser">Browser</string>
+</resources>

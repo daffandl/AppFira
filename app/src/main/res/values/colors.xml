@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_primary">#FF0284C7</color>
+    <color name="blue_light">#FF38BDF8</color>
+    <!-- Background app: harus cocok dengan BackgroundLight/BackgroundDark di Theme.kt -->
+    <color name="background_light">#FFF3F4F6</color>
+    <color name="background_dark">#FF000000</color>
+</resources>
